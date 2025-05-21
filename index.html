@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Download ZIP Files</title>
+  <title>Auto Download ZIP File</title>
   <style>
     .zip-card {
       margin-bottom: 20px;
@@ -12,40 +12,24 @@
       border-radius: 8px;
     }
 
-    button, a.download-button {
-      margin-top: 10px;
-      padding: 6px 12px;
-      cursor: pointer;
-      background-color: #007bff;
-      color: white;
-      border: none;
-      border-radius: 4px;
-      text-decoration: none;
-    }
-
-    a.download-button:hover {
-      background-color: #0056b3;
+    .download-button {
+      display: none; /* Hide the link since it's auto-triggered */
     }
   </style>
 </head>
 <body>
 
   <div class="zip-card">
-    <p><strong>File 1: AWS Basics ZIP</strong></p>
-    <a href="files/module-1.zip" class="download-button" download>Download</a>
+    <p><strong>File: AWS Basics ZIP</strong></p>
+    <a id="autoDownload" href="files/rcb.zip" class="download-button" download>Download</a>
   </div>
 
-  <!-- <div class="zip-card">
-    <p><strong>File 2: EC2 Guide ZIP</strong></p>
-    <a href="files/ec2_guide.zip" class="download-button" download>Download</a>
-  </div>
-
-  <div class="zip-card">
-    <p><strong>File 3: S3 Tutorial ZIP</strong></p>
-    <a href="files/s3_tutorial.zip" class="download-button" download>Download</a>
-  </div> -->
-
-  <!-- Add more ZIP cards here -->
+  <script>
+    window.onload = function () {
+      const link = document.getElementById('autoDownload');
+      link.click();
+    };
+  </script>
 
 </body>
 </html>
